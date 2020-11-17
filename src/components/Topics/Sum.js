@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
 
-class Sum extends Component {
+class FilterString extends Component {
     render(){
-        return (
+        return(
             <p>Sum Component</p>
         )
     }
 }
 
-export default Sum
+export default FilterString

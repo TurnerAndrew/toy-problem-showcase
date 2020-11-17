@@ -35,7 +35,7 @@ class EvenAndOdd extends Component {  //creates a class based component EvenAndO
     
     render (){ //defines what content the component will render when called
         return ( <div className='puzzleBox evenAndOddPB'>
-        `<h4>Evens and Odds</h4>`
+        <h4>Evens and Odds</h4>
             <input className='inputLine' onChange={(e) => this.handleChange(e.target.value)}></input>
             {/* assigns the handleChange method to change in input -- changes the state of userInput */}
             <button className='confirmationButton' onClick={() => this.problemSolver(this.state.userInput)}>Split</button>

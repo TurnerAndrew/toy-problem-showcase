@@ -6,7 +6,22 @@ class FilterObject extends Component {
         super()
 
         this.state ={
-            unfilteredArray: [],
+            unfilteredArray: [
+                {
+                  name: 'Jimmy Joe',
+                  title: 'Hack0r',
+                  age: 12,
+                },
+                {
+                  name: 'Jeremy Schrader',
+                  age: 24,
+                  hairColor: 'brown'
+                },
+                {
+                  name: 'Carly Armstrong',
+                  title: 'CEO',
+                }
+              ],
             userInput: '',
             filteredArray: [],
         }
@@ -31,7 +46,7 @@ class FilterObject extends Component {
                 <span className='puzzleText'></span>
                 <input className='inputLine' onChange={(e) => this.handleChange(e.target.value)}></input>
                 <button className='confirmationButton' onClick={() => this.problemSolver(this.state.userInput)}>Filter</button>
-                <span className='resultsBox filterObjectRB'> {this.filteredArray} </span>
+                <span className='resultsBox filterObjectRB'> Filtered: {this.filteredArray} </span>
             </div>
         )
     }

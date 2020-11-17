@@ -43,7 +43,7 @@ class FilterObject extends Component {
         return (
             <div className='puzzleBox filterObjectPB'>
                 <h4>Filter Object</h4>
-                <span className='puzzleText'></span>
+                <span className='puzzleText'>{this.unfilteredArray}</span>
                 <input className='inputLine' onChange={(e) => this.handleChange(e.target.value)}></input>
                 <button className='confirmationButton' onClick={() => this.problemSolver(this.state.userInput)}>Filter</button>
                 <span className='resultsBox filterObjectRB'> Filtered: {this.filteredArray} </span>

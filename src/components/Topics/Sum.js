@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 
-class FilterString extends Component {
+class Sum extends Component {
     render(){
         return(
             <p>Sum Component</p>
@@ -8,4 +8,4 @@ class FilterString extends Component {
     }
 }
 
-export default FilterString
+export default Sum

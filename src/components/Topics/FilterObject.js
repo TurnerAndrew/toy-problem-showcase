@@ -31,11 +31,18 @@ class FilterObject extends Component {
         this.setState({userInput: val})
     }
 
-    problemSolver() {
-        let newArray = this.unfilteredArray.filter(key => {
-            return newArray.userInput
-        })
-        this.setState({filteredArray: newArray})
+    problemSolver(prop) {
+        let newArray = this.state.unfilteredArray
+        let employeesFiltered = []
+
+        for(let i = 0; i < newArray.length; i++) {
+            if (newArray[i].hasOwnProperty(prop)) {
+                employeesFiltered.push(this.state.unfilteredArray[i])
+            }
+        }
+     
+        
+        this.setState({filteredArray: employeesFiltered})
     }
 
     
@@ -43,10 +50,10 @@ class FilterObject extends Component {
         return (
             <div className='puzzleBox filterObjectPB'>
                 <h4>Filter Object</h4>
-                <span className='puzzleText'>{this.unfilteredArray}</span>
+                <span className='puzzleText'>{ JSON.stringify(this.state.unfilteredArray, null, 10) }</span>
                 <input className='inputLine' onChange={(e) => this.handleChange(e.target.value)}></input>
                 <button className='confirmationButton' onClick={() => this.problemSolver(this.state.userInput)}>Filter</button>
-                <span className='resultsBox filterObjectRB'> Filtered: {this.filteredArray} </span>
+                <span className='resultsBox filterObjectRB'> Filtered: { JSON.stringify(this.state.filteredArray, null, 10) } </span>
             </div>
         )
     }

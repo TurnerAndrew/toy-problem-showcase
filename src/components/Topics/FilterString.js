@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 
-class Sum extends Component {
+class FilterString extends Component {
    
     constructor(){
         super()
@@ -14,12 +14,11 @@ class Sum extends Component {
 
        
     handleChange(val) {
-        this.setState.userInput({userInput: val})
+        this.setState({userInput: val})
     }
     
-    problemSolver() {
-        let names = this.state.names
-        let input = this.state.userInput
+    problemSolver(input) {
+        let names = this.state.unfilteredArray
         let filtered = []
         
         for (let i = 0; i < names.length; i++){
@@ -36,13 +35,13 @@ class Sum extends Component {
         return (
             <div className='puzzleBox filterStringPB'>
                 <h4>Filter String</h4>
-                <span className='puzzleText'>{this.state.unfilteredArray}</span>
+                <span className='puzzleText'>{ JSON.stringify(this.state.unfilteredArray, null, 10) }</span>
                 <input className='inputLine' onChange={(e) => this.handleChange(e.target.value)}></input>
-                <button className='confirmationButton' onClick={() => this.problemSolver(this.userInput)}>Filter</button>
-                <span className='resultsBox filterStringRB'>Filtered Names: {this.state.filteredArray}</span>
+                <button className='confirmationButton' onClick={() => this.problemSolver(this.state.userInput)}>Filter</button>
+                <span className='resultsBox filterStringRB'>Filtered Names: { JSON.stringify(this.state.filteredArray, null, 10) }</span>
             </div>
         )
     }
 }
 
-export default Sum
+export default FilterString
